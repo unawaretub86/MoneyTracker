@@ -1,21 +1,24 @@
 package database
 
 import (
+	"github.com/unawaretub86/MoneyTracker/internal/domain/users/entities"
 	database "github.com/unawaretub86/MoneyTracker/internal/infrastructure/configuration/database"
 	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
 )
 
 type (
 	Database interface {
+		GetUsers() (*entities.Users, error)
+		GetUserByID(uint) (*entities.User, error)
 	}
 
-	databaseDomain struct {
+	databaseUser struct {
 		db database.Database
 	}
 )
 
-func NewDatabase(container *dependencies.Container) Database {
-	return &databaseDomain{
+func NewUserDatabase(container *dependencies.Container) Database {
+	return &databaseUser{
 		db: container.Database(),
 	}
 }

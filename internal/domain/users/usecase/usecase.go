@@ -1,12 +1,15 @@
 package usecase
 
 import (
-	"github.com/unawaretub86/MoneyTracker/internal/domain/money-tracker/repository"
+	"github.com/unawaretub86/MoneyTracker/internal/domain/users/entities"
+	"github.com/unawaretub86/MoneyTracker/internal/domain/users/repository"
 	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
 )
 
 type (
-	UseCase interface {
+	UseUser interface {
+		GetUsers() (*entities.Users, error)
+		GetUserByID(uint) (*entities.User, error)
 	}
 
 	useCase struct {
@@ -14,8 +17,8 @@ type (
 	}
 )
 
-func NewUse(container *dependencies.Container) UseCase {
+func NewUseUser(container *dependencies.Container) UseUser {
 	return &useCase{
-		repo: repository.NewRepository(container),
+		repo: repository.NewUserRepository(container),
 	}
 }

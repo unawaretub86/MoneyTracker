@@ -1,18 +1,23 @@
 package http
 
 import (
-	"github.com/unawaretub86/MoneyTracker/internal/domain/money-tracker/usecase"
+	"github.com/unawaretub86/MoneyTracker/internal/domain/users/usecase"
 	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
+)
+
+const (
+	suffixErr  = "Error"
+	suffixUser = "User"
 )
 
 type (
 	Handler struct {
-		UseCase usecase.UseCase
+		UseUser usecase.UseUser
 	}
 )
 
-func NewHandler(container *dependencies.Container) *Handler {
+func NewUserHandler(container *dependencies.Container) *Handler {
 	return &Handler{
-		UseCase: usecase.NewUse(container),
+		UseUser: usecase.NewUseUser(container),
 	}
 }

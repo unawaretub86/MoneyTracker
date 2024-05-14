@@ -1,21 +1,24 @@
 package repository
 
 import (
-	database "github.com/unawaretub86/MoneyTracker/internal/domain/money-tracker/repository/database"
+	"github.com/unawaretub86/MoneyTracker/internal/domain/users/entities"
+	database "github.com/unawaretub86/MoneyTracker/internal/domain/users/repository/database"
 	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
 )
 
 type (
 	Repo interface {
+		GetUsers() (*entities.Users, error)
+		GetUserByID(uint) (*entities.User, error)
 	}
 
 	repository struct {
-		database database.Database
+		databaseUser database.Database
 	}
 )
 
-func NewRepository(container *dependencies.Container) Repo {
+func NewUserRepository(container *dependencies.Container) Repo {
 	return &repository{
-		database: database.NewDatabase(container),
+		databaseUser: database.NewUserDatabase(container),
 	}
 }
