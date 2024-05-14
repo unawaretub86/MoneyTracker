@@ -3,6 +3,8 @@ package configuration
 import (
 	"fmt"
 	"os"
+
+	"github.com/joho/godotenv"
 )
 
 type DatabaseConfig struct {
@@ -16,6 +18,11 @@ type DatabaseConfig struct {
 }
 
 func GetDatabaseConfig() string {
+	err := godotenv.Load()
+    if err != nil {
+        panic("Error loading .env file")
+    }
+	
 	dbConfig := DatabaseConfig{
 		Username:     os.Getenv("DB_USER"),
 		Password:     os.Getenv("DB_PASSWORD"),
@@ -26,10 +33,11 @@ func GetDatabaseConfig() string {
 		TimeZone:     os.Getenv("TIME_ZONE"),
 	}
 
-	return fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=5432",
+	return fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%v",
 		dbConfig.Host,
 		dbConfig.Username,
 		dbConfig.Password,
 		dbConfig.DBName,
+		dbConfig.DatabasePort,
 	)
 }

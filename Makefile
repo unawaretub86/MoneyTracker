@@ -6,4 +6,6 @@ lint:
 	golangci-lint run
 # start the application
 start:
-	docker-compose up
+	go run cmd/main.go
+#rm if u need use docker	
+#docker-compose up
