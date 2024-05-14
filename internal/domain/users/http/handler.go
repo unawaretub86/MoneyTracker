@@ -5,10 +5,7 @@ import (
 	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
 )
 
-const (
-	suffixErr  = "Error"
-	suffixUser = "User"
-)
+const suffixErr = "Error"
 
 type (
 	Handler struct {

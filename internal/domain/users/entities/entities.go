@@ -15,3 +15,7 @@ type (
 
 	Users []User
 )
+
+func (User) TableName() string {
+	return "mt_users"
+}
