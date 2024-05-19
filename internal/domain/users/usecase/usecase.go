@@ -23,7 +23,6 @@ func NewUseUser(container *dependencies.Container) UseUser {
 	}
 }
 
-
 func NewMockUseUser(repositoryUser repository.Repo) UseUser {
 	return &useCase{
 		repo: repositoryUser,
