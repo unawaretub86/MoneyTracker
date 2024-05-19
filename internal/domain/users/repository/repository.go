@@ -22,3 +22,10 @@ func NewUserRepository(container *dependencies.Container) Repo {
 		databaseUser: database.NewUserDatabase(container),
 	}
 }
+
+func NewMockUserRepository(database database.Database) Repo {
+	return &repository{
+		databaseUser: database,
+	}
+}
+
