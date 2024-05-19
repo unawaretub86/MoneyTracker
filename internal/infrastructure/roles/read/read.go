@@ -19,6 +19,7 @@ func NewRead(container *dependencies.Container) *read {
 }
 
 func (read *read) RegisterRoutes(basePath string, r *gin.Engine) {
+
 	userHandler := userHandler.NewUserHandler(read.container)
 	moneyHandler := moneyHandler.NewHandler(read.container)
 

@@ -10,7 +10,6 @@ func errorResponse(err error, suffix string) gin.H {
 
 func EndWithStatus(c *gin.Context, status int, body any) {
 	c.JSON(status, body)
-}
 
 func EndWithStatusError(c *gin.Context, status int, suffix string, err error) {
 	c.JSON(status, errorResponse(err, suffix))

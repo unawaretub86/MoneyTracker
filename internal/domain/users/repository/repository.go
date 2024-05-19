@@ -28,4 +28,3 @@ func NewMockUserRepository(database database.Database) Repo {
 		databaseUser: database,
 	}
 }
-
