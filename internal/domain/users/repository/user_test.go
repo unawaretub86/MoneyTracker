@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	
 	"github.com/unawaretub86/MoneyTracker/internal/domain/users/entities"
 	"github.com/unawaretub86/MoneyTracker/internal/domain/users/repository"
 	database "github.com/unawaretub86/MoneyTracker/internal/domain/users/repository/database/mocks"
