@@ -1,7 +1,7 @@
 package http
 
 import (
-	"github.com/unawaretub86/MoneyTracker/internal/domain/money-tracker/usecase"
+	"github.com/unawaretub86/MoneyTracker/internal/main/money-tracker/usecase"
 	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
 )
 

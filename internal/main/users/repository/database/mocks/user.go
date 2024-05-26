@@ -1,6 +1,6 @@
 package mock
 
-import "github.com/unawaretub86/MoneyTracker/internal/domain/users/entities"
+import "github.com/unawaretub86/MoneyTracker/internal/main/users/entities"
 
 const (
 	GetUsersMethodName         = "GetUsers"

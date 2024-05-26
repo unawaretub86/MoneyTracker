@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"github.com/unawaretub86/MoneyTracker/internal/domain/money-tracker/repository"
+	"github.com/unawaretub86/MoneyTracker/internal/main/money-tracker/repository"
 	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
 )
 

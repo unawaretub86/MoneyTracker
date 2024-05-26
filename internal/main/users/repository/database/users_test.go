@@ -8,8 +8,8 @@ import (
 	"github.com/DATA-DOG/go-sqlmock"
 	"github.com/stretchr/testify/assert"
 	
-	"github.com/unawaretub86/MoneyTracker/internal/domain/users/entities"
-	"github.com/unawaretub86/MoneyTracker/internal/domain/users/repository/database"
+	"github.com/unawaretub86/MoneyTracker/internal/main/users/entities"
+	"github.com/unawaretub86/MoneyTracker/internal/main/users/repository/database"
 	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
 	"github.com/unawaretub86/MoneyTracker/utils/generic"
 )

@@ -2,7 +2,7 @@ package database
 
 import (
 	database "github.com/unawaretub86/MoneyTracker/internal/infrastructure/configuration/database"
-	"github.com/unawaretub86/MoneyTracker/internal/domain/users/entities"
+	"github.com/unawaretub86/MoneyTracker/internal/main/users/entities"
 	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
 )
 

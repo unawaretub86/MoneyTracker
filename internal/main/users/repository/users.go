@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/unawaretub86/MoneyTracker/internal/domain/users/entities"
+import "github.com/unawaretub86/MoneyTracker/internal/main/users/entities"
 
 func (userRepo repository) GetUserByID(id uint) (*entities.User, error) {
 	return userRepo.databaseUser.GetUserByID(id)

@@ -3,8 +3,8 @@ package read
 import (
 	"github.com/gin-gonic/gin"
 
-	moneyHandler "github.com/unawaretub86/MoneyTracker/internal/domain/money-tracker/http"
-	userHandler "github.com/unawaretub86/MoneyTracker/internal/domain/users/http"
+	moneyHandler "github.com/unawaretub86/MoneyTracker/internal/main/money-tracker/http"
+	userHandler "github.com/unawaretub86/MoneyTracker/internal/main/users/http"
 	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
 )
 

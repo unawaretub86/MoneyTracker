@@ -3,7 +3,7 @@ package database
 import (
 	"gorm.io/gorm"
 
-	"github.com/unawaretub86/MoneyTracker/internal/domain/users/entities"
+	"github.com/unawaretub86/MoneyTracker/internal/main/users/entities"
 )
 
 func (databaseUser *databaseUser) GetUserByID(id uint) (*entities.User, error) {

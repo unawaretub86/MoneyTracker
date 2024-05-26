@@ -1,6 +1,6 @@
 package usecase
 
-import "github.com/unawaretub86/MoneyTracker/internal/domain/users/entities"
+import "github.com/unawaretub86/MoneyTracker/internal/main/users/entities"
 
 func (useUser useCase) GetUserByID(id uint) (*entities.User, error) {
 	return useUser.repo.GetUserByID(id)

@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"github.com/unawaretub86/MoneyTracker/internal/domain/users/entities"
-	database "github.com/unawaretub86/MoneyTracker/internal/domain/users/repository/database"
+	"github.com/unawaretub86/MoneyTracker/internal/main/users/entities"
+	database "github.com/unawaretub86/MoneyTracker/internal/main/users/repository/database"
 	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
 )
 
