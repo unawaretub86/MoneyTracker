@@ -9,6 +9,7 @@ Clone this repo using git clone
 
 - [Go > 1.21](https://go.dev/doc/install)
 - [make](https://linuxhint.com/install-use-make-windows/)
+- [lint](https://golangci-lint.run/welcome/install/#local-installation)
 
 ## MakeFile
 

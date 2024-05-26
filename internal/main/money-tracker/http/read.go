@@ -8,5 +8,5 @@ import (
 )
 
 func (handler Handler) Ping(c *gin.Context) {
-	utils.EndWithStatus(c, http.StatusOK, "response", "pong")
+	utils.EndWithStatus(c, http.StatusOK, "pong")
 }

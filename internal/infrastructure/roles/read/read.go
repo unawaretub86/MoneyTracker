@@ -3,7 +3,8 @@ package read
 import (
 	"github.com/gin-gonic/gin"
 
-	yourHandler "github.com/unawaretub86/MoneyTracker/internal/domain/money-tracker/http"
+	moneyHandler "github.com/unawaretub86/MoneyTracker/internal/main/money-tracker/http"
+	userHandler "github.com/unawaretub86/MoneyTracker/internal/main/users/http"
 	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
 )
 
@@ -18,7 +19,14 @@ func NewRead(container *dependencies.Container) *read {
 }
 
 func (read *read) RegisterRoutes(basePath string, r *gin.Engine) {
-	handler := yourHandler.NewHandler(read.container)
 
-	r.GET("/ping", handler.Ping)
+	userHandler := userHandler.NewUserHandler(read.container)
+	moneyHandler := moneyHandler.NewHandler(read.container)
+
+	v1Group := r.Group(basePath + "/v1")
+
+	v1Group.GET("/users", userHandler.GetUsers)
+	v1Group.GET("/user/:id", userHandler.GetUserByID)
+
+	r.GET("/ping", moneyHandler.Ping)
 }
