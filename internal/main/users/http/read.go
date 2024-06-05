@@ -5,7 +5,7 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	
+
 	"github.com/unawaretub86/MoneyTracker/utils"
 )
 
