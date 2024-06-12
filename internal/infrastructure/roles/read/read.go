@@ -26,7 +26,7 @@ func (read *read) RegisterRoutes(basePath string, r *gin.Engine) {
 	v1Group := r.Group(basePath + "/v1")
 
 	v1Group.GET("/users", userHandler.GetUsers)
-	v1Group.GET("/user/:id", userHandler.GetUserByID)
+	v1Group.GET("/users/:id", userHandler.GetUserByID)
 
 	r.GET("/ping", moneyHandler.Ping)
 }
