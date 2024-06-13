@@ -1,6 +1,7 @@
 CREATE TABLE MT_USERS (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
+    username VARCHAR(30) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     birth_date varchar(10) NOT NULL,
     password VARCHAR(100) NOT NULL,

@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
+	userHandler "github.com/unawaretub86/MoneyTracker/internal/main/users/http"
 )
 
 type write struct {
@@ -17,4 +18,9 @@ func NewWrite(container *dependencies.Container) *write {
 }
 
 func (write *write) RegisterRoutes(basePath string, r *gin.Engine) {
+	userHandler := userHandler.NewUserHandler(write.container)
+
+	v1Group := r.Group(basePath + "/v1")
+
+	v1Group.POST("/users", userHandler.CreateUser)
 }

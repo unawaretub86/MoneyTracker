@@ -3,9 +3,9 @@ package read
 import (
 	"github.com/gin-gonic/gin"
 
+	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
 	moneyHandler "github.com/unawaretub86/MoneyTracker/internal/main/money-tracker/http"
 	userHandler "github.com/unawaretub86/MoneyTracker/internal/main/users/http"
-	"github.com/unawaretub86/MoneyTracker/internal/infrastructure/dependencies"
 )
 
 type read struct {
@@ -26,7 +26,7 @@ func (read *read) RegisterRoutes(basePath string, r *gin.Engine) {
 	v1Group := r.Group(basePath + "/v1")
 
 	v1Group.GET("/users", userHandler.GetUsers)
-	v1Group.GET("/user/:id", userHandler.GetUserByID)
+	v1Group.GET("/users/:id", userHandler.GetUserByID)
 
 	r.GET("/ping", moneyHandler.Ping)
 }

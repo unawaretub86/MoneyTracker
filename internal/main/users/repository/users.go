@@ -9,3 +9,7 @@ func (userRepo repository) GetUserByID(id uint) (*entities.User, error) {
 func (userRepo repository) GetUsers() (*entities.Users, error) {
 	return userRepo.databaseUser.GetUsers()
 }
+
+func (userRepo repository) CreateUser(user *entities.User) (bool, error) {
+	return userRepo.databaseUser.CreateUser(user)
+}
