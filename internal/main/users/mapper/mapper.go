@@ -1,7 +1,6 @@
 package mapper
 
 import (
-	"fmt"
 	"time"
 
 	"golang.org/x/crypto/bcrypt"
@@ -10,20 +9,22 @@ import (
 	"github.com/unawaretub86/MoneyTracker/internal/main/users/http/dto"
 )
 
-func CreateUserRqToUserEntity(req dto.CreateUserRequest) entities.User {
+func CreateUserRqToUserEntity(req dto.CreateUserRequest) (*entities.User, error) {
 	now := time.Now()
+
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
-	if err != nil {
-		fmt.Print("Error parsing password")
-		// Handle error
+	if err != nil {		
+		return nil, err
 	}
+
 	hashedPassString := string(hashedPassword)
-	return entities.User{
+	
+	return &entities.User{
 		Name:      &req.Name,
 		Username:  &req.Username,
 		Email:     &req.Email,
 		Password:  &hashedPassString,
 		BirthDate: &req.BirthDate,
 		CreatedAt: now,
-	}
+	}, nil
 }

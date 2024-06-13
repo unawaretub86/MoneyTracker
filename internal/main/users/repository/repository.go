@@ -10,7 +10,7 @@ type (
 	Repo interface {
 		GetUsers() (*entities.Users, error)
 		GetUserByID(uint) (*entities.User, error)
-		CreateUser(entities.User) (bool, error)
+		CreateUser(*entities.User) (bool, error)
 	}
 
 	repository struct {

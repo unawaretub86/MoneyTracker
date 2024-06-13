@@ -18,6 +18,11 @@ func (useUser useCase) GetUsers() (*entities.Users, error) {
 
 func (useUser useCase) CreateUser(userDto dto.CreateUserRequest) (bool, error) {
 	fmt.Print("creating entity: ", userDto.Username)
-	userEntity := mapper.CreateUserRqToUserEntity(userDto)
+
+	userEntity, err := mapper.CreateUserRqToUserEntity(userDto)
+	if err != nil {
+		return false, err
+	}
+
 	return useUser.repo.CreateUser(userEntity)
 }

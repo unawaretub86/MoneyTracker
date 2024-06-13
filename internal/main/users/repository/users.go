@@ -10,6 +10,6 @@ func (userRepo repository) GetUsers() (*entities.Users, error) {
 	return userRepo.databaseUser.GetUsers()
 }
 
-func (userRepo repository) CreateUser(user entities.User) (bool, error) {
+func (userRepo repository) CreateUser(user *entities.User) (bool, error) {
 	return userRepo.databaseUser.CreateUser(user)
 }

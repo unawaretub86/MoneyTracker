@@ -36,7 +36,7 @@ func (databaseUser databaseUser) getUser(id uint) (*entities.User, *gorm.DB) {
 	return user, result
 }
 
-func (databaseUser databaseUser) CreateUser(userRq entities.User) (bool, error) {
+func (databaseUser databaseUser) CreateUser(userRq *entities.User) (bool, error) {
 	result := databaseUser.db.Connection().Create(&userRq)
 	if result.Error != nil {
 		return false, result.Error

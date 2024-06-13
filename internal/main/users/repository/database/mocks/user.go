@@ -3,8 +3,9 @@ package mock
 import "github.com/unawaretub86/MoneyTracker/internal/main/users/entities"
 
 const (
-	GetUsersMethodName         = "GetUsers"
-	GetUserByIDMethodName          = "GetUserByID"
+	GetUsersMethodName    = "GetUsers"
+	GetUserByIDMethodName = "GetUserByID"
+	CreateUserMethodName  = "CreateUser"
 )
 
 func (mock *mockContainer) PatchGetUsers(users entities.Users, err error) {
@@ -14,12 +15,21 @@ func (mock *mockContainer) PatchGetUsers(users entities.Users, err error) {
 func (mock *mockContainer) GetUsers() (*entities.Users, error) {
 	return mock.getUsersAndErrorFromResult(GetUsersMethodName)
 }
+
 func (mock *mockContainer) PatchGetUserByID(user *entities.User, err error) {
 	mock.mocker.Patch(GetUserByIDMethodName, user, err)
 }
 
 func (mock *mockContainer) GetUserByID(uint) (*entities.User, error) {
 	return mock.getUserByIDAndErrorFromResult(GetUserByIDMethodName)
+}
+
+func (mock *mockContainer) PatchCreateUser(user *entities.User, err error) {
+	mock.mocker.Patch(CreateUserMethodName, user, err)
+}
+
+func (mock *mockContainer) CreateUser(*entities.User) (*entities.User, error) {
+	return mock.getUserByIDAndErrorFromResult(CreateUserMethodName)
 }
 
 func (mock *mockContainer) getUsersAndErrorFromResult(name string) (*entities.Users, error) {
